@@ -1,0 +1,20 @@
+    1  fdisk /dev/sdb
+    2  lsblk
+    3  fdisk /dev/sdc
+    4  fdisk /dev/sdd
+    5  lsblk
+    6  pvs
+    7  vgs
+    8  pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1
+    9  pvs
+   10  vgcreate datos /dev/sdb1 /dev/sdc1 /dev/sdd1
+   11  vgs
+   12  lvcreate -L 1G -n www datos
+   13  lvcreate -L 4G -n salvas datos
+   14  vgs
+   15  lvs
+   16  lvextend -L +1G /dev/datos/www
+   17  lvextend -L +0.9G /dev/datos/www
+   18  lvs
+   19  vgs
+   20  history > /home/poido/Desktop/history.txt
